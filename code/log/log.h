@@ -20,7 +20,7 @@ private:
     void AsyncWrite_(); // async write log
 public:
     void init(int level, const char *path = "./log", const char *suffix = ".log", int maxQueueCapacity = 1024);
-    static Log *instance();
+    static Log *Instance();
     static void FlushLogThread();
 
     void write(int level, const char *format, ...);
@@ -52,4 +52,7 @@ private:
     FILE* fp_;
     std::unique_ptr<BlockQueue<std::string>> deque_;
     std::unique_ptr<std::thread> writTread_;
+    std::mutex mtx_;
 };
+
+

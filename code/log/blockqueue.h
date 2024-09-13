@@ -19,7 +19,7 @@ private:
     std::condition_variable condProducer_ public : explicit BlockQueue(size_t max_size = 1000);
 
 public:
-    explicit BlockQueue(size_t maxsize);
+    explicit BlockQueue(size_t maxsize = 1024);
     ~BlockQueue();
     bool empty();
     bool full();
