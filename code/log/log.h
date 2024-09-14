@@ -14,7 +14,7 @@
 class Log
 {
 private:
-    Log(/* args */);
+    Log();
     virtual ~Log();
     void AppeendLogLevelTitle_(int level);
     void AsyncWrite_(); // async write log
